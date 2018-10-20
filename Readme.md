@@ -48,6 +48,9 @@ Then, we provision n worker nodes by running doctl again from the command line
 
 ```bash
 doctl compute droplet create k1 --image ubuntu-16-04-x64 --ssh-keys 23238460 --region nyc1 --size s-1vcpu-1gb --user-data-file ./cnf/cnf-worker
+doctl compute droplet create k2 --image ubuntu-16-04-x64 --ssh-keys 23238460 --region nyc1 --size s-1vcpu-1gb --user-data-file ./cnf/cnf-worker
+doctl compute droplet create k3 --image ubuntu-16-04-x64 --ssh-keys 23238460 --region nyc1 --size s-1vcpu-1gb --user-data-file ./cnf/cnf-worker
+etc...
 ```
 
 If all goes well, we now have worker nodes connected to the master node and networking via Calico.
