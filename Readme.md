@@ -4,7 +4,7 @@ This is intended for use provisioning Ubuntu 16.04 nodes via ssh.
 
 From my understanding, automatic provisioning of nodes for Kubernetes is very cloud-platform dependent. 
 
-In this case I am using DigitalOcean's cloud-init user-data doctl (CLI for DO), but I assume any provider supporting the (cloud-init user-data)[https://cloudinit.readthedocs.io/en/latest/topics/format.html#example] would work fine.
+In this case I am using DigitalOcean's cloud-init user-data doctl (CLI for DO), but I assume any provider supporting the [cloud-init user-data](https://cloudinit.readthedocs.io/en/latest/topics/format.html#example) would work fine.
 
 ## Step 1 (Create a master node with Kubeadm)
 
@@ -14,9 +14,9 @@ So, in order to control our cluster, we need a master node. This node can either
 
 We need to run the provisioning script cnf_master to install the Docker runtime, various dependencies for installation, and the Kubernetes services Kubectl and Kubelet. We are using Kubeadm to init our cluster, so we need that too.
 
-In order to quickly create a master node which will use the Calico Container Networking Interface (CNI)[https://docs.projectcalico.org/v2.0/getting-started/kubernetes/] to connect with worker nodes. 
+In order to quickly create a master node which will use the Calico Container Networking Interface [CNI](https://docs.projectcalico.org/v2.0/getting-started/kubernetes/) to connect with worker nodes. 
 
-Let's create a new master node on DigitalOcean with (doctl )[https://github.com/digitalocean/doctl/blob/master/README.md]
+Let's create a new master node on DigitalOcean with [doctl](https://github.com/digitalocean/doctl/blob/master/README.md)
 
 1 VCPU, 1 GB RAM, Ubuntu 16.04 x64
 note: I am using the --ssh-keys flag to enable communication with my droplet without password
